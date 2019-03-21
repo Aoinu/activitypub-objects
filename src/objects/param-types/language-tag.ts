@@ -1,4 +1,4 @@
 export enum LanguageTag {
-    ENGLISH = "en",
-    JAPANESE = "ja",
+  ENGLISH = "en",
+  JAPANESE = "ja",
 }

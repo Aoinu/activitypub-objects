@@ -1,3 +1,3 @@
 export enum MediaType {
-    HTML = "text/html",
+  HTML = "text/html",
 }

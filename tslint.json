@@ -1,13 +1,14 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {
-        "interface-name": [false, "always-prefix"],
-        "ordered-imports": false,
-        "no-empty-interface": false
-    },
-    "rulesDirectory": []
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "indent": [true, "spaces", 2],
+    "interface-name": [false, "always-prefix"],
+    "ordered-imports": false,
+    "no-empty-interface": false
+  },
+  "rulesDirectory": []
 }
