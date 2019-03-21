@@ -8,6 +8,7 @@
     "indent": [true, "spaces", 2],
     "interface-name": [false, "always-prefix"],
     "ordered-imports": false,
+    "object-literal-sort-keys": false,
     "trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
     "no-empty-interface": false
   },

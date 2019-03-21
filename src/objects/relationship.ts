@@ -8,12 +8,12 @@ export class Relationship implements ActivityObject {
   public readonly subject: Actor;
   public readonly object: Actor;
   constructor(params: {
-    relatinship: Relation,
+    relationship: Relation,
     subject: Actor,
     object: Actor,
     id?: URL,
   }) {
-    this.relationship = params.relatinship;
+    this.relationship = params.relationship;
     this.subject = params.subject;
     this.object = params.object;
     if (params.id != null) {

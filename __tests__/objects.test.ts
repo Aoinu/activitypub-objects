@@ -5,10 +5,17 @@ import * as ActivityPub from "../src";
 describe("Object", () => {
   describe("Article", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Article("test", new URL("https://test.com/1"), "test content");
+      const obj = new ActivityPub.Article({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        content: "test content",
+      });
+      expect.assertions(5);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
       expect(obj.content).toBe("test content");
       expect(obj.attributedTo).toBeUndefined();
     });
@@ -16,94 +23,157 @@ describe("Object", () => {
 
   describe("Audio", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Audio("test", new URL("https://test.com/1"), new URL("https://test.com/audio/1"));
+      const obj = new ActivityPub.Audio({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        url: new URL("https://test.com/audio/1"),
+      });
+      expect.assertions(3);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
     });
   });
 
   describe("Document", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Document(
-        "test", new URL("https://test.com/1"), new URL("https://test.com/document/1"));
+      const obj = new ActivityPub.Document({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        url: new URL("https://test.com/document/1"),
+      });
+      expect.assertions(3);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
     });
   });
 
   describe("Event", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Event(
-        "test", new URL("https://test.com/1"), new Date(), new Date());
+      const obj = new ActivityPub.Event({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        startTime: new Date(),
+        endTime: new Date(),
+      });
+      expect.assertions(3);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
     });
   });
 
   describe("Image", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Image(
-        "test", new URL("https://test.com/1"), new URL("https://test.com/image/1"));
+      const obj = new ActivityPub.Image({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        url: new URL("https://test.com/image/1"),
+      });
+      expect.assertions(3);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
     });
   });
 
   describe("Note", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Note(
-        "test", new URL("https://test.com/1"), "test content");
+      const obj = new ActivityPub.Note({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        content: "test content",
+      });
+      expect.assertions(4);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
       expect(obj.content).toBe("test content");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
     });
   });
 
   describe("Page", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Page(
-        "test", new URL("https://test.com/1"), new URL("https://test.com/image/1"));
+      const obj = new ActivityPub.Page({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        url: new URL("https://test.com/image/1"),
+      });
+      expect.assertions(3);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
     });
   });
 
   describe("Place", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Place(
-        "test", new URL("https://test.com/1"));
+      const obj = new ActivityPub.Place({
+        name: "test",
+        id: new URL("https://test.com/1"),
+        accuracy: 0.1,
+        altitude: 100,
+        latitude: 36.75,
+        longitude: 119.7667,
+        radius: 15,
+        units: "miles",
+      });
+      expect.assertions(9);
       expect(obj).toBeTruthy();
       expect(obj.name).toBe("test");
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
+      expect(obj.accuracy).toBe(0.1);
+      expect(obj.altitude).toBe(100);
+      expect(obj.latitude).toBe(36.75);
+      expect(obj.longitude).toBe(119.7667);
+      expect(obj.radius).toBe(15);
+      expect(obj.units).toBe("miles");
     });
   });
 
   describe("Profile", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Profile(
-        new URL("https://test.com/1"), "test summary", new ActivityPub.Person("test"));
+      const obj = new ActivityPub.Profile({
+        id: new URL("https://test.com/1"),
+        summary: "test summary",
+        describes: new ActivityPub.Person("test"),
+      });
+      expect.assertions(3);
       expect(obj).toBeTruthy();
-      expect(obj.id.href).toBe("https://test.com/1");
       expect(obj.describes.name).toBe("test");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
     });
   });
 
   describe("Relationship", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Relationship(
-        new URL("https://test.com/1"),
-        ActivityPub.Relation.FRIEND_OF,
-        new ActivityPub.Person("test1"),
-        new ActivityPub.Person("test2"),
-      );
+      const obj = new ActivityPub.Relationship({
+        id: new URL("https://test.com/1"),
+        relationship: ActivityPub.Relation.FRIEND_OF,
+        subject: new ActivityPub.Person("test1"),
+        object: new ActivityPub.Person("test2"),
+      });
       expect(obj).toBeTruthy();
-      expect(obj.id.href).toBe("https://test.com/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/1");
+      }
       expect(obj.subject.name).toBe("test1");
       expect(obj.object.name).toBe("test2");
     });
@@ -111,19 +181,31 @@ describe("Object", () => {
 
   describe("Tombstone", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Tombstone(
-        "name", new URL("https://test.com/image/1"), ActivityPub.Objects.IMAGE, new Date());
+      const obj = new ActivityPub.Tombstone({
+        name: "name",
+        id: new URL("https://test.com/image/1"),
+        formerType: ActivityPub.Objects.IMAGE,
+        deleted: new Date(),
+      });
       expect(obj).toBeTruthy();
-      expect(obj.id.href).toBe("https://test.com/image/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/image/1");
+      }
     });
   });
 
   describe("Video", () => {
     it("should be able to create instance", () => {
-      const obj = new ActivityPub.Video(
-        "name", new URL("https://test.com/video/1"), new URL("https://test.com/video/1"), "PT5S");
+      const obj = new ActivityPub.Video({
+        name: "name",
+        id: new URL("https://test.com/video/1"),
+        url: new URL("https://test.com/video/1"),
+        duration: "PT5S",
+      });
       expect(obj).toBeTruthy();
-      expect(obj.id.href).toBe("https://test.com/video/1");
+      if (obj.id != null) {
+        expect(obj.id.href).toBe("https://test.com/video/1");
+      }
     });
   });
 
