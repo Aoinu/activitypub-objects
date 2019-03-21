@@ -5,7 +5,7 @@ export class Event implements ActivityObject {
   constructor(
     public readonly name: string,
     public readonly id: URL,
-    public readonly startTime: Date,
-    public readonly endTime: Date,
+    public readonly startTime?: Date,
+    public readonly endTime?: Date,
   ) { }
 }
