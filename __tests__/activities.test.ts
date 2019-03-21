@@ -109,7 +109,10 @@ describe("Activity", () => {
     it("should be able to create instance", () => {
       const activity = new ActivityPub.Invite(
         new ActivityPub.Person("test1"),
-        new ActivityPub.Event("party", new URL("https://test.com/event/1")),
+        new ActivityPub.Event({
+          name: "party",
+          id: new URL("https://test.com/event/1"),
+        }),
         new ActivityPub.Person("test2"),
       );
       expect(activity).toBeTruthy();
@@ -175,7 +178,11 @@ describe("Activity", () => {
     it("should be able to create instance", () => {
       const activity = new ActivityPub.Question({
         name: "test",
-        oneOf: [new ActivityPub.Note("option1", new URL("https://test.com/1"), "option1")],
+        oneOf: [new ActivityPub.Note({
+          name: "option1",
+          id: new URL("https://test.com/1"),
+          content: "option1",
+        })],
       });
       expect.assertions(4);
       expect(activity).toBeTruthy();
