@@ -100,7 +100,7 @@ describe("Object", () => {
         new URL("https://test.com/1"),
         ActivityPub.Relation.FRIEND_OF,
         new ActivityPub.Person("test1"),
-        new ActivityPub.Person("test2")
+        new ActivityPub.Person("test2"),
       );
       expect(obj).toBeTruthy();
       expect(obj.id.href).toBe("https://test.com/1");
