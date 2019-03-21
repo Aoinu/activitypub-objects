@@ -4,7 +4,7 @@ export class Place implements ActivityObject {
   public readonly type = Objects.PLACE;
   constructor(
     public readonly name: string,
-    public readonly id: URL,
+    public readonly id?: URL,
     public readonly accuracy?: number,
     public readonly altitude?: number,
     public readonly latitude?: number,
