@@ -1,5 +1,9 @@
 src/
 __tests__/
+.circleci/
+jest.config.js
+tslint.json
+tsconfig.json
 
 node_modules/
 coverage/
