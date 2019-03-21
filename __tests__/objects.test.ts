@@ -9,6 +9,7 @@ describe("Object", () => {
         name: "test",
         id: new URL("https://test.com/1"),
         content: "test content",
+        attributedTo: new URL("https://test.com/2"),
       });
       expect.assertions(5);
       expect(obj).toBeTruthy();
@@ -17,7 +18,9 @@ describe("Object", () => {
         expect(obj.id.href).toBe("https://test.com/1");
       }
       expect(obj.content).toBe("test content");
-      expect(obj.attributedTo).toBeUndefined();
+      if (obj.attributedTo != null) {
+        expect((obj.attributedTo as URL).href).toBe("https://test.com/2");
+      }
     });
   });
 
