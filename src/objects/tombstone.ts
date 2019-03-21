@@ -5,7 +5,7 @@ export class Tombstone implements ActivityObject {
   constructor(
     public readonly name: string,
     public readonly id: URL,
-    public readonly formerType: string,
+    public readonly formerType: Objects,
     public readonly deleted: Date,
   ) { }
 }
