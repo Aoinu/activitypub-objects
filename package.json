@@ -1,0 +1,16 @@
+{
+  "name": "activitypub-objects",
+  "version": "0.0.1",
+  "main": "dst/index.js",
+  "author": "aoinu",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}
