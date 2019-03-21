@@ -1,5 +1,8 @@
+dst/
+
 node_modules/
 coverage/
-dst/
+junit.xml
+*.log
 
 .vscode/
