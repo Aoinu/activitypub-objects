@@ -4,3 +4,4 @@ export * from "./objects";
 export * from "./exceptions";
 export * from "./collection";
 export * from "./link";
+export * from "./serializer";
