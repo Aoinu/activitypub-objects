@@ -1,5 +1,3 @@
-"use strict";
-
 import * as ActivityPub from "../src";
 
 describe("Object", () => {
